@@ -1,0 +1,10 @@
+package String;
+
+public class WordCounterSplitMethod {
+	public static void main(String[] args) {
+		String str = "my name is drsn, hello drsn, how are you drsn";
+		String words[] = str.split(" ");
+		
+	}
+
+}

@@ -1,0 +1,19 @@
+package collection;
+
+import java.util.HashMap;
+
+public class WordCounter {
+	public static void main(String[] args) {
+		
+		String str = "Hello Java Hello Tops";
+		
+		HashMap<String, Integer> map = new HashMap<String, Integer>();
+		
+		String words[] = str.split(" ");
+		
+		for(int i=0;i<words.length;i++) {
+			System.out.println(i);
+		}
+	}
+
+}

@@ -1,0 +1,35 @@
+package thread;
+
+//if we want to synchronized particular Method - we use Method Synchronized.
+
+class Calc{
+	synchronized public void table(int number) {
+		for(int i=1;i<=5;i++) {
+			System.out.println(Thread.currentThread().getName()+" : " + number*i);
+		}
+	}
+}
+
+class Test extends Thread{
+	Calc c;
+	Test(Calc c){
+		this.c = c;
+	}
+	public void run() {
+		c.table(5);
+	}
+}
+
+public class T005_MethodSync {
+	public static void main(String[] args) {
+		Calc c = new Calc();
+		
+		Test t1 = new Test(c);
+		Test t2 = new Test(c);
+		Test t3 = new Test(c);
+		
+		t1.start();
+		t2.start();
+		t3.start();
+	}
+}

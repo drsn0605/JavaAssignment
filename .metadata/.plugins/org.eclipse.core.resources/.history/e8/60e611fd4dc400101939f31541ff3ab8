@@ -1,0 +1,14 @@
+package OOPS_03;
+
+import packagee.Person;
+
+public class encapsulation {
+	public static void main(String[] args) {
+		
+		Person p1 = new Person();
+//		p1.age(23);   //here age is a private field. So, we cannot access it directly. 
+		p1.setAge(23);
+		System.out.println(p1.getAge());
+	}
+}
+

@@ -1,0 +1,20 @@
+package collection;
+
+import java.util.HashMap;
+
+public class LetterCounter {
+	public static void main(String[] args) {
+		String str = "my name is Darshan";
+		
+		HashMap<Character, Integer> map = new HashMap<>();
+		
+		char[] arr = str.toCharArray();
+
+		for(char ch : arr) {
+		    System.out.println(ch);
+		}
+		
+		
+	}
+
+}

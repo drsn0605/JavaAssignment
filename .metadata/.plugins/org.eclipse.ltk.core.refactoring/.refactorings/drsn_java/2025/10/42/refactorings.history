@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;Fileio.FileOutputStream&apos; to &apos;F001_FileOutputStream&apos;&#x0D;&#x0A;- Original project: &apos;drsn_java&apos;&#x0D;&#x0A;- Original element: &apos;Fileio.FileOutputStream&apos;&#x0D;&#x0A;- Renamed element: &apos;Fileio.F001_FileOutputStream&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;FileOutputStream&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;Fileio{FileOutputStream.java[FileOutputStream" matchStrategy="1" name="F001_FileOutputStream" qualified="false" references="true" similarDeclarations="false" stamp="1760425328022" textual="false" version="1.0"/>
+</session>

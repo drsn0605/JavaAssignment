@@ -1,0 +1,22 @@
+package CollectionInterface;
+
+public class Player {
+	int id;
+	String name;
+	String type;
+	int age;
+	public Player(int id, String name, String type, int age) {
+		super();
+		this.id = id;
+		this.name = name;
+		this.type = type;
+		this.age = age;
+	}
+	@Override
+	public String toString() {
+		return "Player [id=" + id + ", name=" + name + ", type=" + type + ", age=" + age + "]";
+	}
+	
+	
+
+}

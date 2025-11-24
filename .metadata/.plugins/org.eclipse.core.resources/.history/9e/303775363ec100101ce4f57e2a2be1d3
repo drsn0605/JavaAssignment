@@ -1,0 +1,20 @@
+package CollectionInterface;
+
+import java.util.ArrayList;
+
+public class PlayerCollection {
+	public static void main(String[] args) {
+		ArrayList<Player> al = new ArrayList<>();
+		al.add(new Player(1,"Gopal","Batsman",20));
+		al.add(new Player(2,"Om","Bowler",22));
+		al.add(new Player(3,"Kishan","Wicketkeeper",24));
+		al.add(new Player(4,"Rahul","Fielder",25));
+		
+//		System.out.print(al);
+		
+		for (Player p : al) {
+			System.out.println(p);
+		}
+	}
+
+}

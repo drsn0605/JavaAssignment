@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Rename type &apos;collection.LetterCounter&apos; to &apos;CharCounter&apos;&#x0D;&#x0A;- Original project: &apos;drsn_java&apos;&#x0D;&#x0A;- Original element: &apos;collection.LetterCounter&apos;&#x0D;&#x0A;- Renamed element: &apos;collection.CharCounter&apos;&#x0D;&#x0A;- Update references to refactored element&#x0D;&#x0A;- Update textual occurrences in comments and strings" description="Rename type &apos;LetterCounter&apos;" flags="589830" id="org.eclipse.jdt.ui.rename.type" input="/src&lt;collection{LetterCounter.java[LetterCounter" matchStrategy="1" name="CharCounter" qualified="false" references="true" similarDeclarations="false" stamp="1763196250762" textual="false" version="1.0"/>
+</session>

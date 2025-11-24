@@ -1,0 +1,38 @@
+package collection;
+
+
+import java.util.HashMap;
+import java.util.Iterator;
+import java.util.Set;
+
+public class C011_HashMapDemo {
+	public static void main(String[] args) {
+		HashMap<String,Integer> map = new HashMap<>();
+		map.put("Java", 50);
+		map.put("php", 51);
+		map.put("Android", 49);
+		map.put("Python", 45);
+		map.put("Java", 52);
+		
+//		System.out.println(map);
+		
+//		System.out.println(map.get("Java"));
+		
+		//to print the key value pair 
+		Set s = map.entrySet();     //Iterator is not for HashMap. So, first we need to convert it in Set.
+		Iterator itr = s.iterator();
+		while(itr.hasNext()) {
+			System.out.println(itr.next());
+		}
+		
+		//to access the key and value separatly
+		for(Entry<String,Integer> e : map.entrySet()) {
+			System.out.println(e.getKey());
+			System.out.println(e.getvalue());
+		}
+		
+		
+	}	
+	
+
+}
