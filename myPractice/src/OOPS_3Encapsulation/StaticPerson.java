@@ -1,0 +1,6 @@
+package OOPS_3Encapsulation;
+
+public class StaticPerson {
+	public int id;
+	public static int count = 45;
+}

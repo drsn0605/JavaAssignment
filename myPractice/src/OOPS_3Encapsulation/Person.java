@@ -1,0 +1,49 @@
+package OOPS_3Encapsulation;
+
+public class Person {
+	private int age;
+	private String name;
+
+	boolean CanBeChange = true;
+
+	// setterMethod
+	public void setAge(int age) {
+		this.age = age;
+	}
+
+	// getterMethod
+	public int getAge() {
+		return age;
+	}
+
+//	public void setAge(int age,String name) {
+//		this.age = age;
+//		this.name = name;
+//		
+//	}
+//
+//	@Override
+//	public String toString() {
+//		return "Person [age=" + age + ", name=" + name + "]";
+//	}
+
+}
+
+//public class Person {
+//	private int age;
+//	private String name;
+//
+//	boolean CanBeChange = true;   //if we take default value false then output will be 0, here default value is true thats why we are getting age.
+//
+//	// setterMethod
+//	public void setAge(int age) {
+//		if (CanBeChange) {       //we can control the access.
+//			this.age = age;
+//		}
+//
+//	}
+//
+//	// getterMethod
+//	public int getAge() {
+//		return age;
+//	}

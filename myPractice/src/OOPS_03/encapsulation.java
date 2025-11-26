@@ -1,6 +1,6 @@
 package OOPS_03;
 
-import packagee.Person;
+import OOPS_3Encapsulation.Person;
 
 public class encapsulation {
 	public static void main(String[] args) {

@@ -1,0 +1,21 @@
+package OOPS_03;
+
+//Static methods cannot access non-static variables directly.
+
+class Demo{
+	int id = 10;
+	
+	static void show() {
+		System.out.println("Static method");
+	}
+}
+
+public class Static02 {
+	public static void main(String[] args) {
+		Demo d1 = new Demo();
+		Demo.show();      //No object required
+		d1.id = 20;
+		System.out.println(d1.id);
+		System.out.println(id);
+	}
+}

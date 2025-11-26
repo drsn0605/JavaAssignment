@@ -1,0 +1,7 @@
+package OOPS_03;
+
+class Static03 {
+	static {
+		System.out.println("Static Block Executed");
+	}
+}

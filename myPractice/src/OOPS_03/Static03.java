@@ -1,0 +1,18 @@
+package OOPS_03;
+
+//only inner class can be static.
+
+class Outer {
+	static class Inner {
+		void show() {
+			System.out.println("Static inner class");
+		}
+	}
+}
+
+public class Static03 {
+	public static void main(String[] args) {
+		Outer.Inner a1 = new Outer.Inner();
+		a1.show();
+	}
+}

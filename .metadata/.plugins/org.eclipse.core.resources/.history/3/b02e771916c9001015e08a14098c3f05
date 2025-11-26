@@ -1,0 +1,15 @@
+package OOPS_03;
+
+class Student {
+	static String school = "AB School";
+	String name;
+}
+
+public class Static01 {
+	public static void main(String[] args) {
+		Static01 s1 = new Static01();
+		Static01 s2 = new Static01();
+		System.out.println(Student.school);
+		
+	}
+}

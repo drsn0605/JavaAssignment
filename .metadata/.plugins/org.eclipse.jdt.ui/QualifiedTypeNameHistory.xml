@@ -27,4 +27,5 @@
     <fullyQualifiedTypeName name="java.util.Collections"/>
     <fullyQualifiedTypeName name="java.util.Iterator"/>
     <fullyQualifiedTypeName name="java.util.HashMap"/>
+    <fullyQualifiedTypeName name="OOPS_03.Outer.Inner"/>
 </qualifiedTypeNameHistroy>

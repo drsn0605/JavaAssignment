@@ -1,0 +1,19 @@
+package OOPS_03;
+
+class Test {
+	int count = 0;  //non static variable
+	
+	void show() {
+		count++;
+		System.out.println("Non static variable : "+ count );
+	}
+}
+
+public class WithoutStatic{
+	public static void main(String[] args) {
+		WithoutStatic w1 = new WithoutStatic();
+		WithoutStatic w2 = new WithoutStatic();
+		WithoutStatic w3 = new WithoutStatic();
+		
+	}
+}
