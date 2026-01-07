@@ -37,7 +37,7 @@ public class Person {
 //
 //	// setterMethod
 //	public void setAge(int age) {
-//		if (CanBeChange) {       //we can control the access.
+//		if (CanBeChange) {       //we can control the access. if CanBeChange is true then we can change the age but if it is false then we cannot change the age.
 //			this.age = age;
 //		}
 //

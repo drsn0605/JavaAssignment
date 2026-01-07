@@ -21,9 +21,9 @@ class Bank {
 		balance += amt;
 	}
 
-	public void withdraw(double amt) throws InsufficentFundAmount {
+	public void withdraw(double amt) throws InsufficentFundAmount {    //throws- propagate, with method body, followed by the class name.
 		if (amt > balance) {
-			throw new InsufficentFundAmount(amt - balance);
+			throw new InsufficentFundAmount(amt - balance);    //throw- raise, inside the method body, followed by the instance of a class.
 		} else {
 			balance -= amt;
 		}
