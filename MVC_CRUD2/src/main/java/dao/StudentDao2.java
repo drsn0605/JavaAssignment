@@ -86,8 +86,51 @@ public class StudentDao2 {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
 		return i;
+	}
+
+	public Student2 getElementById(int id) {
+		
+		Student2 st = new Student2();   //agar while ke under object banayenge to st return nahi ho payega.. So hame object yaha hi banana padega.
+		try {
+			PreparedStatement ps = cn.prepareStatement("select * from stdinfo where id=?");
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			while(rs.next()) {
+				
+				st.setId(rs.getInt(1));
+				st.setName(rs.getString(2));
+				st.setEmail(rs.getString(3));
+				st.setAge(rs.getString(4));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return st;
+		
+	}
+
+	public int updateStudent(Student2 st) {
+		
+		int i = 0;
+		try {
+			PreparedStatement ps = cn.prepareStatement("update stdinfo set name=?, email=?, age=? where id=?");
+			ps.setString(1, st.getName());
+			ps.setString(2, st.getEmail());
+			ps.setString(3, st.getAge());
+			ps.setInt(4, st.getId());
+			
+			i = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+	
 	}
 	
 }

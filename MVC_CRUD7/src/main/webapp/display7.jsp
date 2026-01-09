@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 <div class="row">
-<div class="col-5 mx-auto mt-3 p-5 card">
+<div class="col-7 mx-auto mt-3 p-5 card">
 <h2><i><u>Student Information</u></i></h2>
 <hr>
 <table class="table">
@@ -21,7 +21,7 @@
 		<th>Name</th>
 		<th>Email</th>
 		<th>Country</th>
-		<th>Action</th>
+		<th colspan="2">Action</th>
 	</tr>
 <% 
 ArrayList<Student7> al = (ArrayList)request.getAttribute("data7");
@@ -34,6 +34,7 @@ for(Student7 st : al){
 		<td><%= st.getEmail() %></td>
 		<td><%= st.getCountry() %></td>
 		<td><a href="delete7?stid=<%= st.getId() %>" class="btn btn-danger" >Delete</a></td>
+		<td><a href="edit7?eid=<%= st.getId() %>" class="btn btn-secondary">Update</a></td>
 	</tr>
 <%
 }

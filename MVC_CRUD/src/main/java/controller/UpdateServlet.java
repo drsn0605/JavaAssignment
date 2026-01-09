@@ -20,13 +20,13 @@ public class UpdateServlet extends HttpServlet{
 		//Hum RegServlet pe post method me jo bhi tha use copy kar lenge. + hame ek id bhi chahiye.. ki kis id pe update karna hai..So...
 		//So ab hame update.jsp me ek field lena padega [ <input type="text" name="id" value="${student123.id}"> ]..
 		//abhi ham get karenge.
-		int eid = Integer.parseInt(req.getParameter("id"));
+		int id = Integer.parseInt(req.getParameter("id"));
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
 		String phone = req.getParameter("phone");
 		
 		Student st = new Student();
-		st.setId(eid);    //here id hamne set kiya hai, to prepareStatement me bhi id ko get karna padega. means, 0 ke badle st.getId() karna padega. So...[ ps.setInt(4, st.getId()); ]
+		st.setId(id);    //here id hamne set kiya hai, to prepareStatement me bhi id ko get karna padega. means, 0 ke badle st.getId() karna padega. So...[ ps.setInt(4, st.getId()); ]
 		st.setName(name);
 		st.setEmail(email);
 		st.setPhone(phone);
@@ -34,7 +34,7 @@ public class UpdateServlet extends HttpServlet{
 		StudentDao dao = new StudentDao();
 		int i = dao.updateStudent(st);
 		
-		while(i>0) {
+		if(i>0) {
 			
 			req.setAttribute("msg", "update successfully");
 			req.getRequestDispatcher("update.jsp").forward(req, resp);

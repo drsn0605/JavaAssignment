@@ -30,7 +30,7 @@ public class IndexServlet extends HttpServlet{
 //		dao.addStudent(st);    //isko hum i me save kar lenge.
 		int i = dao.addStudent(st);
 		
-		while(i>0) {
+		if(i>0) {
 			req.setAttribute("msg", "done successfully");
 			req.getRequestDispatcher("index.jsp").forward(req, resp);
 		}

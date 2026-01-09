@@ -13,7 +13,7 @@
 
 <div class="container">
 <div class="row">
-<div class="col-6 mx-auto mt-3 p-5 card">
+<div class="col-7 mx-auto mt-3 p-5 card">
 <h2><b><i>Student Information</i></b></h2>
 <hr>
 <table class="table">
@@ -22,7 +22,7 @@
 		<th>Name</th>
 		<th>Email</th>
 		<th>Phone</th>
-		<th>Action</th>
+		<th colspan="2">Action</th>
 	</tr>
 	
 <%
@@ -35,7 +35,8 @@ for( Student6 st : al){
 		<td> <%= st.getName() %></td>
 		<td> <%= st.getEmail() %></td>
 		<td> <%= st.getPhone() %></td>
-		<td><a href="delete6?stid=<%= st.getId() %>" class="btn btn-warning">Delete</a></td>
+		<td><a href="delete6?stid=<%=st.getId() %>" class="btn btn-warning">Delete</a></td>
+		<td><a href="edit6?eid=<%=st.getId() %>" class="btn btn-danger">Update</a></td>
 	</tr>
 <%
 }

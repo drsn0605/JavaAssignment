@@ -23,7 +23,7 @@
 		<th>Name</th>
 		<th>Email</th>
 		<th>City</th>
-		<th>Action</th>
+		<th colspan="2">Action</th>
 	</tr>
 
 <% 
@@ -36,7 +36,8 @@ for(Student5 st : al){
 		<td><%= st.getName() %></td>
 		<td><%= st.getEmail() %></td>
 		<td><%= st.getCity() %></td>
-		<td><a href="delete5?stid=<%= st.getId() %>" class="btn btn-danger">Delete</a></td>
+		<td><a href="delete5?stid=<%=st.getId() %>" class="btn btn-danger">Delete</a></td>
+		<td><a href="edit5?eid=<%=st.getId() %>" class="btn btn-primary">Update</a></td>
 	</tr>
 <%
 }

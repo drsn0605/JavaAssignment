@@ -88,4 +88,48 @@ public class StudentDao {
 		return i;
 	}
 
+	public Student7 getElementById(int id) {
+		
+		Student7 st = new Student7();
+		try {
+			PreparedStatement ps = cn.prepareStatement("select * from Student7 where id=?");
+			ps.setInt(1, id);
+			
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				
+				st.setId(rs.getInt(1));
+				st.setName(rs.getString(2));
+				st.setEmail(rs.getString(3));
+				st.setCountry(rs.getString(4));
+			}
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return st;	
+	}
+
+	public int updateStudent(Student7 st) {
+		
+		int i = 0;
+		
+		try {
+			PreparedStatement ps = cn.prepareStatement("update Student7 set name=?, email=?, country=? where id=?");
+			ps.setString(1, st.getName());
+			ps.setString(2, st.getEmail());
+			ps.setString(3, st.getCountry());
+			ps.setInt(4, st.getId());
+			
+			i = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return i;
+	}
+
 }

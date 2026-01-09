@@ -23,5 +23,9 @@ ${msg4 }
 <input type="submit" class="btn btn-success">
 <input type="reset" class="btn btn-primary">
 <a href="display4" class="btn btn-warning">Display</a>
+</form>
+</div>
+</div>
+</div>
 </body>
 </html>

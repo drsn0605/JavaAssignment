@@ -102,6 +102,7 @@ public class StudentDao {
 			while(rs.next()) {
 				//ResultSet se agar no.1 ka data aaya, to use ham kaha pr add karenge ?? -> st me. So....
 //				st.setId(eid);  //ye eid kaha se aayega?  ->re.getInt(1); se 
+				
 				st.setId(rs.getInt(1));   //means column 1 se jo bhi [id] aayega use ham st me store karenge. lly...
 				st.setName(rs.getString(2));
 				st.setEmail(rs.getString(3));
@@ -132,8 +133,6 @@ public class StudentDao {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
-		
-		
 		return i;
 	}
 }

@@ -12,7 +12,7 @@
 <body>
 <div class="container">
 <div class="row">
-<div class="col-6 mx-auto mt-3 p-5 card">
+<div class="col-7 mx-auto mt-3 p-5 card">
 <!-- <div class="bg-warning text-white p-3"> -->
 <h2><i><b><u>Student Information</u></b></i></h2>
 <hr>
@@ -22,7 +22,7 @@
 	<th>Name</th>
 	<th>Email</th>
 	<th>Num</th>
-	<th>Action</th>
+	<th colspan="2">Action</th>
 	</tr>
 
 
@@ -36,7 +36,8 @@ for(Student3 st : al){
 	<td><%= st.getName() %></td>
 	<td><%= st.getEmail() %></td>
 	<td><%= st.getNum() %></td>
-	<td><a href="delete3?stid=<%= st.getId() %>" class="btn btn-warning">Delete</a>
+	<td><a href="delete3?stid=<%= st.getId() %>" class="btn btn-danger">Delete</a>
+	<td><a href="edit3?eid=<%= st.getId() %>" class="btn btn-secondary" >Update</a></td>
 	</tr>
 <% 
 } %>

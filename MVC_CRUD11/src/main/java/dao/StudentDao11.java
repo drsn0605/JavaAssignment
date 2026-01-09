@@ -30,7 +30,7 @@ public class StudentDao11 {
 		int i = 0;
 		try {
 			PreparedStatement ps = cn.prepareStatement("insert into stdinfo11 values(?,?,?,?)");
-			ps.setInt(1, 0);
+			ps.setInt(1, st.getId());
 			ps.setString(2, st.getName());
 			ps.setString(3, st.getEmail());
 			ps.setString(4, st.getInstitute());
@@ -46,15 +46,14 @@ public class StudentDao11 {
 
 	public ArrayList<Student11> viewStudent() {
 		
-		ArrayList<Student11> al = ArrayList<Student11>();
-		
+		ArrayList<Student11> al = new ArrayList<Student11>();
 		
 		try {
 			PreparedStatement ps = cn.prepareStatement("select * from stdinfo11");
 			ResultSet rs = ps.executeQuery();
 			while(rs.next()) {
 				Student11 st = new Student11();
-				st.setId(1);
+				st.setId(rs.getInt(1));
 				st.setName(rs.getString(2));
 				st.setEmail(rs.getString(3));
 				st.setInstitute(rs.getString(4));
@@ -67,6 +66,23 @@ public class StudentDao11 {
 		}
 		
 		return al;
+	}
+
+	public int deleteStudent(int id) {
+		int i = 0;
+		
+		try {
+			PreparedStatement ps = cn.prepareStatement("delete from stdinfo11 where id=?");
+			ps.setInt(1, id);
+			
+			i = ps.executeUpdate();
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		
+		return i;
 	}
 
 }
