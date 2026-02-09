@@ -1,0 +1,57 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+           http://www.springframework.org/schema/beans
+           https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.Student" name="std" autowire="byName">  <!-- here autowire="byName"  -> Assign property automatically -->
+		<property name="id" value="1"></property>
+		<property name="name" value="darshan"></property>
+		<property name="email" value="drsn@gmail.com"></property>
+		
+		<property name="subjects">
+		<list>
+			<value>Maths</value>
+			<value>Science</value>
+			<value>Physics</value>
+			<value>Physics</value>
+		</list>
+		</property>
+		
+		<property name="languages">
+		<set>
+			<value>Gujarati</value>
+			<value>Hindi</value>
+			<value>English</value>
+			<value>English</value>
+		</set>
+		</property>
+		<!-- <property name="address" ref="adr"></property> -->
+		<property name="marks">
+		<list>
+			<ref bean="m1"/>
+			<ref bean="m2"/>
+		</list>
+		</property>
+	</bean>
+
+	<!-- <bean class="com.Address" name="adr"> -->
+	<bean class="com.Address" name="address">
+	<property name="city" value="Navsari"></property>
+	<property name="state" value="Gujarat"></property>
+	<property name="country" value="Bharat"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m1">
+	<property name="Subject" value="Maths"></property>
+	<property name="marks" value="94"></property>
+	</bean>
+
+	<bean class="com.Marks" name="m2">
+	<property name="Subject" value="Physics"></property>
+	<property name="marks" value="96"></property>
+	</bean>
+
+
+</beans>

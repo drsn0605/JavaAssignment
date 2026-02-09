@@ -26,7 +26,7 @@
 		<th colspan="2">Action</th>
 	</tr>
 
-<% 
+<%
 ArrayList<Student5> al = (ArrayList)request.getAttribute("data5");
 for(Student5 st : al){
 %>

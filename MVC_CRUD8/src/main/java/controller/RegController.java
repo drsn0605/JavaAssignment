@@ -21,7 +21,7 @@ public class RegController extends HttpServlet{
 		String state = req.getParameter("state");
 		
 		Student8 st = new Student8();
-		st.setId(0);
+	
 		st.setName(name);
 		st.setEmail(email);
 		st.setState(state);

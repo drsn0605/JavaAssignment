@@ -19,36 +19,32 @@ public class UpdateController6 extends HttpServlet {
 		StudentDao dao = new StudentDao();
 		Student6 st = dao.getElementById(id);
 		
-		req.setAttribute("stdata", st);
+		req.setAttribute("stdata6", st);
 		req.getRequestDispatcher("update6.jsp").forward(req, resp);
 		
+//		System.out.println("done");
 	}
 	
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-		int id = Integer.parseInt(req.getParameter("iid"));
+		
+		int iid = Integer.parseInt(req.getParameter("newid"));
 		String name = req.getParameter("name");
 		String email = req.getParameter("email");
-		String phone = req.getParameter("phone");
+		String city = req.getParameter("city");
 		
 		Student6 st = new Student6();
-		st.setId(id);
+		st.setId(iid);
 		st.setName(name);
 		st.setEmail(email);
-		st.setPhone(phone);
-		
-//		System.out.println("done1");
+		st.setCity(city);
 		
 		StudentDao dao = new StudentDao();
 		int j = dao.updateStudent(st);
-		
-//		System.out.println("done2");
 		
 		if(j>0) {
 			req.setAttribute("msg2", "Updated Successfully");
 			req.getRequestDispatcher("update6.jsp").forward(req, resp);
 		}
-		
-//		System.out.println("done3");
 	}
 }

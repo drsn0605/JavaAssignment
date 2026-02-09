@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+          http://www.springframework.org/schema/beans
+          https://www.springframework.org/schema/beans/spring-beans.xsd">
+
+	<bean class="com.Student2" name="std">
+		<property name="id" value="1"></property>
+		<property name="name" value="rahul"></property>
+		<property name="email" value="rahul@gmail.com"></property>
+		<property name="sub">
+		<list>
+			<value>Java</value>
+			<value>Python</value>
+			<value>Jango</value>
+		</list>
+		</property>
+		
+		<property name="lang">
+		<set>
+			<value>Hindi</value>
+			<value>Gujarati</value>
+			<value>English</value>
+		</set>
+		</property>
+		
+		<property name="address" ref="adr"></property>
+		<property name="marks">
+		<list>
+			<ref bean="m1"/>
+			<ref bean="m2"/>
+		</list>
+		</property>
+	</bean>
+	
+	<bean class="com.Address" name="adr">
+	<property name="city" value="Surat"></property>
+	<property name="state" value="Gujarat"></property>
+	<property name="country" value="Bharat"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m1">
+	<property name="subject" value="Chemistry"></property>
+	<property name="marks" value="87"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m2">
+	<property name="subject" value="Biology"></property>
+	<property name="marks" value="89"></property>
+	</bean>
+
+</beans>

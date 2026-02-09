@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+        <bean class="com.Student4" name="std">
+	        <property name="id" value="1"></property>
+	        <property name="name" value="Ishan"></property>
+	        <property name="email" value="ishan@gmail.com"></property>
+	        
+	        <property name="subject">
+	        	<list>
+	        		<value>sub1</value>
+	        		<value>sub2</value>
+	        		<value>sub3</value>
+	        	</list>
+	        </property>
+	        
+	        <property name="lang">
+	        	<set>
+	        		<value>hin</value>
+	        		<value>eng</value>
+	        		<value>Sanskrit</value>
+	        	</set>
+	        </property>
+	        
+	        <property name="address" ref="adr"></property>
+	        <property name="marks">
+	        <list>
+	        	<ref bean="m1"/>
+	        	<ref bean="m2"/>
+	        	<ref bean="m3"/>
+	        </list>
+	        </property>
+        </bean>
+        
+        <bean class="com.Address" name="adr">
+        <property name="city" value="chk"></property>
+        <property name="dis" value="nvs"></property>
+        <property name="state" value="guj"></property>
+        <property name="country" value="Bharat"></property>
+        </bean>
+        
+        <bean class="com.Marks" name="m1">
+        <property name="subject" value="sub1"></property>
+        <property name="marks" value="87"></property>
+        </bean>
+        
+        <bean class="com.Marks" name="m2">
+        <property name="subject" value="sub2"></property>
+        <property name="marks" value="97"></property>
+        </bean>
+        
+        <bean class="com.Marks" name="m3">
+        <property name="subject" value="sub3"></property>
+        <property name="marks" value="99"></property>
+        </bean>
+        
+</beans>

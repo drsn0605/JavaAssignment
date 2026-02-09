@@ -22,7 +22,7 @@ public class RegController9 extends HttpServlet{
 		
 //		System.out.println("done");
 		Student9 st = new Student9();
-		st.setId(0);
+		
 		st.setName(name);
 		st.setEmail(email);
 		st.setVillage(village);

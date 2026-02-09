@@ -24,7 +24,7 @@ public class CodeWithoutConstructor {
 }
 
 
-//without constructor:
+////without constructor:
 //class Student01 {
 //	int id;
 //	String name;
@@ -39,7 +39,7 @@ public class CodeWithoutConstructor {
 //	}
 //}
 //
-//public class ConstructorStudent {
+//public class CodeWithoutConstructor {
 //	public static void main(String[] args) {
 //		Student01 s1 = new Student01();
 //		s1.setData(101, "darshan");

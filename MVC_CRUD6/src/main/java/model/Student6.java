@@ -1,10 +1,10 @@
 package model;
 
 public class Student6 {
-	int id;
-	String name;
-	String email;
-	String phone;
+	private int id;
+	private String name;
+	private String email;
+	private String city;
 	public int getId() {
 		return id;
 	}
@@ -23,11 +23,11 @@ public class Student6 {
 	public void setEmail(String email) {
 		this.email = email;
 	}
-	public String getPhone() {
-		return phone;
+	public String getCity() {
+		return city;
 	}
-	public void setPhone(String phone) {
-		this.phone = phone;
+	public void setCity(String city) {
+		this.city = city;
 	}
 	
 

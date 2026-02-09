@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+        http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd">
+        
+	<bean class="com.Student3" name="std">
+		<property name="id" value="1"></property>
+		<property name="name" value="Sanat"></property>
+		<property name="email" value="sanat@gmail.com"></property>
+		<property name="subject">
+			<list>
+				<value>C</value>
+				<value>C++</value>
+				<value>CSS</value>
+			</list>
+		</property>
+		
+		<property name="lang">
+			<set>
+				<value>Guj</value>
+				<value>Hin</value>
+				<value>Eng</value>
+			</set>
+		</property>
+		
+		<property name="address" ref="adr"></property>
+		<property name="marks">
+		<list>
+			<ref bean="m1"/>
+			<ref bean="m2"/>
+			
+		</list>
+		</property>
+		
+	</bean>
+	
+	<bean class="com.Address" name="adr">
+	<property name="city" value="nvs"></property>
+	<property name="state" value="guj"></property>
+	<property name="country" value="Bharat"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m1">
+	<property name="subj" value="Maths"></property>
+	<property name="mrk" value="98"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m2">
+	<property name="subj" value="Statistics"></property>
+	<property name="mrk" value="96"></property>
+	</bean>
+
+</beans>

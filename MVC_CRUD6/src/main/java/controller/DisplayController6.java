@@ -17,9 +17,7 @@ public class DisplayController6 extends HttpServlet{
 	protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		
 		StudentDao dao = new StudentDao();
-		ArrayList<Student6> al = dao.viewStudent6();
-		
-//		System.out.println("done");
+		ArrayList<Student6> al  = dao.viewStudent();
 		
 		req.setAttribute("data6", al);
 		req.getRequestDispatcher("display6.jsp").forward(req, resp);

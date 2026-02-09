@@ -1,6 +1,7 @@
 package CollectionInterface;
 
 import java.util.ArrayList;
+import java.util.Iterator;
 
 public class C01_ArrayList {
 	public static void main(String[] args) {
@@ -31,8 +32,21 @@ public class C01_ArrayList {
 //		newal1.clear();    //to clear the whole list.
 //		System.out.println(newal1);
 		
-		al1.set(2, 3000);
-		System.out.println(al1);
+//		al1.set(2, 3000);
+//		System.out.println(al1);
+		
+		for(int i = 0; i< al1.size();i++) {
+			System.out.println("element is : " + al1.get(i));
+		}
+		
+		for(Integer element : al1) {
+			System.out.println("element : " + element);
+		}
+		
+		Iterator<Integer> it = al1.iterator();
+		while(it.hasNext()) {
+			System.out.println("element is : " + it.next());
+		}
 		
 	}
 

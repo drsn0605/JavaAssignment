@@ -17,24 +17,19 @@
             <div class="card shadow p-4">
                 <h3 class="text-center mb-4"><b><i>Login Form</i></b></h3>
 
-                <form action="reg" method="post">
-
-                    <!-- Username -->
-                    <div class="mb-3">
-                        <label class="form-label">Username</label>
-                        <input type="text" name="name" class="form-control">
-                    </div>
+				${err }
+                <form action="login" method="post">
 
                     <!-- Email -->
                     <div class="mb-3">
                         <label class="form-label">Email</label>
-                        <input type="email" name="email" class="form-control">
+                        <input type="email" name="email" class="form-control" placeholder="Enter email">
                     </div>
 
                     <!-- Password -->
                     <div class="mb-3">
                         <label class="form-label">Password</label>
-                        <input type="password" name="pass" class="form-control">
+                        <input type="password" name="pass" class="form-control" placeholder="Enter password">
                     </div>
 
                     <!-- Buttons -->

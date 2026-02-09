@@ -16,7 +16,8 @@
         <div class="col-md-6 mx-auto">
             <div class="card shadow p-4">
                 <h3 class="text-center mb-4"><b><i>Registration Form</i></b></h3>
-
+                
+			    ${msg }
                 <form action="reg" method="post">
 
                     <!-- Username -->
@@ -81,16 +82,16 @@
                     <!-- Address -->
                     <div class="mb-3">
                         <label class="form-label">Address</label>
-                        <textarea class="form-control" rows="3"></textarea>
+                        <textarea class="form-control" rows="3" name="address"></textarea>
                     </div>
 
                     <!-- Buttons -->
                     <div>
-                        <input type="submit" class="btn btn-primary" value="Register">
+                        <input type="submit" class="btn btn-primary">
                         <input type="reset" class="btn btn-secondary">
                         <br>
                         <hr>
-                        <a href="index.jsp" class="btn btn-success">Already regitered? Login here</a>
+                        <a href="index.jsp" class="btn btn-success">Already registered? Login here</a>
                     </div>
 
                 </form>

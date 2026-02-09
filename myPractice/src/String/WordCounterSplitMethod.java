@@ -4,9 +4,9 @@ public class WordCounterSplitMethod {
 	public static void main(String[] args) {
 		String str = "my name is drsn, hello drsn, how are you drsn";
 		String words[] = str.split(" ");
-//		for(int i=0;i<str.length();i++) {
-//			System.out.println(i);
-//		}
+		for(int i=0;i<str.length();i++) {
+			System.out.println(i);
+		}
 		System.out.println(words);
 	}
 

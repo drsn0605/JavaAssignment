@@ -7,7 +7,7 @@ public class F008_FileClass {
 		
 		File f = new File("D:\\Files\\home2");
 		
-//		System.out.println(f.exists());
+		System.out.println(f.exists());
 		
 //		try {
 //			f.createNewFile();
@@ -18,9 +18,9 @@ public class F008_FileClass {
 		
 //		f.delete();
 		
-//		System.out.println(f.isFile());
-//		System.out.println(f.isDirectory());
-		f.mkdir();
+		System.out.println(f.isFile());
+		System.out.println(f.isDirectory());
+//		f.mkdir();
 		
 		System.out.println("hgAVCAMC");
 	}

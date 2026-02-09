@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xsi:schemaLocation="
+         http://www.springframework.org/schema/beans
+         https://www.springframework.org/schema/beans/spring-beans.xsd">
+	
+	<bean class="com.Student6" name="std6">
+		<property name="id" value="1"></property>
+		<property name="name" value="deep"></property>
+		<property name="email" value="deep@gmail.com"></property>
+		
+		<property name="number">
+			<list>
+				<value>8320858835</value>
+				<value>9898043483</value>
+				<value>7096470039</value>
+			</list>
+		</property>
+		
+		<property name="language">
+			<set>
+				<value>Kannad</value>
+				<value>Malyalam</value>
+				<value>Tamil</value>
+			</set>
+		</property>
+		<property name="address" ref="adr"></property>
+		<property name="marks">
+		<list>
+			<ref bean="m1"/>
+			<ref bean="m2"/>
+		</list>
+		</property>
+	</bean>
+	
+	<bean class="com.Address" name="adr">
+		<property name="city" value="nvs"></property>
+		<property name="state" value="guj"></property>
+	</bean> 
+	
+	<bean class="com.Marks" name="m1">
+		<property name="subject" value="Science"></property>
+		<property name="marks" value="98"></property>
+	</bean>
+	
+	<bean class="com.Marks" name="m2">
+		<property name="subject" value="Maths"></property>
+		<property name="marks" value="95"></property>
+	</bean>
+
+</beans>

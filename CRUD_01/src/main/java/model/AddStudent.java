@@ -10,6 +10,11 @@ import org.hibernate.cfg.Configuration;
 public class AddStudent {
 	public static void main(String[] args) {
 		
+		Student st = new Student();
+		st.setId(3);
+		st.setName("kishan");
+		st.setEmail("kishan@gmail.com");
+		
 		Configuration cfg = new Configuration();
 		cfg.configure("hibernate.cfg.xml");
 		cfg.addAnnotatedClass(Student.class);
@@ -22,15 +27,10 @@ public class AddStudent {
 		
 		Transaction tx = s.beginTransaction();
 		
-		//to view particular student
-//		Student st = s.find(Student.class, 1);   
-//		System.out.println(st.getId()+" "+st.getName()+" "+st.getEmail());
+		s.persist(st);    //s.merge(st); - for update
 		
-		//to view all student
-		List<Student> st = s.createQuery("from Student").list();
-		for(Student std : st) {
-			System.out.println(std.getId()+" "+std.getName()+" "+std.getEmail());
-		}
+		tx.commit();
+		
 	}
 
 }
