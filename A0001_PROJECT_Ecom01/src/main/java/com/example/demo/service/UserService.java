@@ -2,12 +2,13 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.demo.model.User;
+import com.example.demo.dto.UserDto;
 
 public interface UserService {
-	public User create(User u);
-	public List<User> list();
-	public User update(User u, int id);
-	public void destroy(int id);
-	public User retrive(int rid);
+	
+	public UserDto create(UserDto dto);
+	public List<UserDto> list();
+	public UserDto update(UserDto dto, Long id);
+	public UserDto retrive(Long id);
+	public void destroy(Long id);
 }

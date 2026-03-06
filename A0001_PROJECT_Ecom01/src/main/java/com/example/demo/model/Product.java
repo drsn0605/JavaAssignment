@@ -1,5 +1,8 @@
 package com.example.demo.model;
 
+import java.math.BigDecimal;
+import java.time.LocalDateTime;
+
 import jakarta.persistence.*;
 
 @Entity
@@ -8,21 +11,39 @@ public class Product {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	int id;
-	String name;
-	double price;
-	int qty;
-	String image;
+	private Long id;
 	
-	@ManyToOne(cascade= {CascadeType.DETACH, CascadeType.MERGE, CascadeType.PERSIST, CascadeType.REFRESH})
-	@JoinColumn(name="cid")
-	Category category;
+	@ManyToOne
+	@JoinColumn(name="category_id")
+	private Category category;
 	
-	public int getId() {
+	@Column(nullable = false)
+	private String name;
+	
+	@Column(columnDefinition = "TEXT")
+	private String description;
+	
+	@Column(nullable = false)
+	private BigDecimal price;
+	
+	private Integer stockQty = 0;
+	private String image;
+	private boolean isActive = true;
+	private LocalDateTime createdAt = LocalDateTime.now();
+	
+	
+	
+	public Long getId() {
 		return id;
 	}
-	public void setId(int id) {
+	public void setId(Long id) {
 		this.id = id;
+	}
+	public Category getCategory() {
+		return category;
+	}
+	public void setCategory(Category category) {
+		this.category = category;
 	}
 	public String getName() {
 		return name;
@@ -30,17 +51,23 @@ public class Product {
 	public void setName(String name) {
 		this.name = name;
 	}
-	public double getPrice() {
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public BigDecimal getPrice() {
 		return price;
 	}
-	public void setPrice(double price) {
+	public void setPrice(BigDecimal price) {
 		this.price = price;
 	}
-	public int getQty() {
-		return qty;
+	public Integer getStockQty() {
+		return stockQty;
 	}
-	public void setQty(int qty) {
-		this.qty = qty;
+	public void setStockQty(Integer stockQty) {
+		this.stockQty = stockQty;
 	}
 	public String getImage() {
 		return image;
@@ -48,11 +75,17 @@ public class Product {
 	public void setImage(String image) {
 		this.image = image;
 	}
-	public Category getCategory() {
-		return category;
+	public boolean isActive() {
+		return isActive;
 	}
-	public void setCategory(Category category) {
-		this.category = category;
+	public void setActive(boolean isActive) {
+		this.isActive = isActive;
+	}
+	public LocalDateTime getCreatedAt() {
+		return createdAt;
+	}
+	public void setCreatedAt(LocalDateTime createdAt) {
+		this.createdAt = createdAt;
 	}
 	
 }

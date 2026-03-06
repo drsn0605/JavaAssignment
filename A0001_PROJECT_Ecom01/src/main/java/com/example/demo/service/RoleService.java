@@ -2,12 +2,12 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.demo.model.Role;
+import com.example.demo.dto.RoleDto;
 
 public interface RoleService {
-	public Role create(Role r);
-	public List<Role> list();
-	public Role update(Role r, int id);
-	public void destroy(int id);
-	public Role retrive(int rid);
+	public RoleDto create(RoleDto dto);
+	public List<RoleDto> list();
+	public RoleDto update(RoleDto dto, Long id);
+	public void destroy(Long id);
+	public RoleDto retrive(Long rid);
 }

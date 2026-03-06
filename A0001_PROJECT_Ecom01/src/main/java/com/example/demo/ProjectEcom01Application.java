@@ -1,7 +1,9 @@
 package com.example.demo;
 
+import org.modelmapper.ModelMapper;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 @SpringBootApplication
 public class ProjectEcom01Application {
@@ -10,4 +12,8 @@ public class ProjectEcom01Application {
 		SpringApplication.run(ProjectEcom01Application.class, args);
 	}
 
+	@Bean
+	public ModelMapper mapper() {
+		return new ModelMapper();
+	}
 }

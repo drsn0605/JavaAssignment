@@ -2,12 +2,12 @@ package com.example.demo.service;
 
 import java.util.List;
 
-import com.example.demo.model.Category;
+import com.example.demo.dto.CategoryDto;
 
 public interface CategoryService {
-	public Category create(Category c);
-	public List<Category> list();
-	public Category update(Category c, int id);
-	public void destroy(int id);
-	public Category retrive(int cid);
+	public CategoryDto create(CategoryDto dto);
+	public List<CategoryDto> list();
+	public CategoryDto retrive(Long id);
+	public CategoryDto update(CategoryDto dto, Long id);
+	public void destroy(Long id);
 }
