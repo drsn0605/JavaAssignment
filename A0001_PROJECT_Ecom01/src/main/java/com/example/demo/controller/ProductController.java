@@ -30,8 +30,8 @@ public class ProductController {
 	@Autowired
 	CategoryService cservice;
 	
-	@PostMapping("/{cid}")
-	public ResponseEntity<ProductDto> create(@RequestBody ProductDto dto, @PathVariable("cid") Long cid) {
+	@PostMapping("/")
+	public ResponseEntity<ProductDto> create(@RequestBody ProductDto dto, @RequestParam("cat") Long cid) {
 		dto.setCategory(cservice.retrive(cid));
 		ProductDto created = pservice.create(dto);
 		return new ResponseEntity<>(created, HttpStatus.CREATED);

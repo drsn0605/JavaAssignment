@@ -11,4 +11,5 @@ public interface UserService {
 	public UserDto update(UserDto dto, Long id);
 	public UserDto retrive(Long id);
 	public void destroy(Long id);
+	public List<UserDto> retriveByRole(Long id);
 }

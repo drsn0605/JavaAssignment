@@ -30,7 +30,7 @@ public class RoleController {
 		return new ResponseEntity<>(createdRole, HttpStatus.CREATED);
 	}
 	
-	@GetMapping("/")
+	@GetMapping()
 	public ResponseEntity<List<RoleDto>> list() {
 		List<RoleDto> roles = service.list();
 		return new ResponseEntity<>(roles, HttpStatus.OK);
@@ -53,4 +53,5 @@ public class RoleController {
 		RoleDto role = service.retrive(id);
 		return new ResponseEntity<>(role, HttpStatus.OK);
 	}
+
 }

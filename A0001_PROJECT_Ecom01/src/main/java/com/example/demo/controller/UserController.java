@@ -60,4 +60,10 @@ public class UserController {
 		service.destroy(id);
 		return ResponseEntity.ok("User Deleted");
 	}
+	
+	@GetMapping("/role/{rid}")
+	public ResponseEntity<List<UserDto>> findByRole(@PathVariable("rid") Long id) {
+		List<UserDto> dtos = service.retriveByRole(id);
+		return new ResponseEntity<>(dtos, HttpStatus.OK);
+	}
 }

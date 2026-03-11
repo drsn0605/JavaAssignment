@@ -7,11 +7,13 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import com.example.demo.dto.RoleDto;
 import com.example.demo.dto.UserDto;
 import com.example.demo.model.Role;
 import com.example.demo.model.User;
 import com.example.demo.payload.ResourceNotFoundException;
 import com.example.demo.repo.UserRepo;
+import com.example.demo.service.RoleService;
 import com.example.demo.service.UserService;
 
 @Service
@@ -22,6 +24,9 @@ public class UserServiceImpl implements UserService{
 	
 	@Autowired
 	ModelMapper mapper;
+	
+	@Autowired
+	RoleService roleservice;
 	
 	@Override
 	public UserDto create(UserDto dto) {
@@ -70,6 +75,19 @@ public class UserServiceImpl implements UserService{
 		User user = repo.findById(id).orElseThrow(()-> new ResourceNotFoundException("User","ID",id));
 		repo.delete(user);
 	}
+
+	@Override
+	public List<UserDto> retriveByRole(Long id) {
+//		roleservice.retrive(id);
+		Role role = mapper.map(roleservice.retrive(id), Role.class);
+		List<User> ulist = repo.findByRole(role);
+		List<UserDto> dtos = ulist.stream().map(u->{
+			return mapper.map(u, UserDto.class);
+		}).collect(Collectors.toList());
+		return dtos;
+	}
+
+	
 	
 	
 	
