@@ -1,6 +1,7 @@
 package com.example.demo.model;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -14,6 +15,9 @@ public class Cart {
 	@OneToOne
 	@JoinColumn(name="user_id", unique = true)
 	private User user;
+	
+	@OneToMany(mappedBy = "cart")
+	private List<CartItem> items;
 	
 	private LocalDateTime createdAt = LocalDateTime.now();
 
@@ -39,6 +43,14 @@ public class Cart {
 
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public List<CartItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<CartItem> items) {
+		this.items = items;
 	}
 	
 }

@@ -71,7 +71,7 @@ public class AddressServiceImpl implements AddressService{
 		UserDto dto = userservice.retrive(uid);
 		User u = mapper.map(dto, User.class);
 		List<Address> alist = repo.findByUser(u);
-		System.out.println(alist);
+//		System.out.println(alist);
 		List<AddressDto> dtos = alist.stream().map(a->{
 			return mapper.map(a, AddressDto.class);
 		}).collect(Collectors.toList());

@@ -2,6 +2,7 @@ package com.example.demo.model;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
+import java.util.List;
 
 import jakarta.persistence.*;
 
@@ -33,7 +34,8 @@ public class Order {
 	
 	private LocalDateTime createdAt = LocalDateTime.now();
 
-	
+	@OneToMany(mappedBy = "order")
+	private List<OrderItem> items;
 
 	public Long getId() {
 		return id;
@@ -97,6 +99,14 @@ public class Order {
 
 	public void setCreatedAt(LocalDateTime createdAt) {
 		this.createdAt = createdAt;
+	}
+
+	public List<OrderItem> getItems() {
+		return items;
+	}
+
+	public void setItems(List<OrderItem> items) {
+		this.items = items;
 	}
 	
 }
