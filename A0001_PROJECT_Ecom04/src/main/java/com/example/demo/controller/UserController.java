@@ -45,10 +45,10 @@ public class UserController {
 	}
 	
 	@PutMapping("/{uid}")
-	public ResponseEntity<UserDto> update(@RequestBody UserDto dto, @RequestParam("role") Long rid) {
+	public ResponseEntity<UserDto> update(@RequestBody UserDto dto,@PathVariable("uid") Long uid, @RequestParam("role") Long rid) {
 		RoleDto r = rservice.retrive(rid);
 		dto.setRole(r);
-		UserDto updated = service.update(dto, rid);
+		UserDto updated = service.update(dto, uid);
 		return new ResponseEntity<>(updated, HttpStatus.CREATED);
 	}
 	
